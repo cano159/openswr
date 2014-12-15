@@ -4,7 +4,7 @@ OpenSWR
 Overview
 --------
 
-OpenOpenSWR is a high performance, highly scalable software rasterizer
+OpenSWR is a high performance, highly scalable software rasterizer
 which implements a subset of the OpenGL API.  Currently it implements
 a subset of the OpenGL 1.4 specification, namely the old-style fixed
 function pipeline.
