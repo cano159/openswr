@@ -20,7 +20,7 @@
 #endif
 
 #include "llvm/IR/IRBuilder.h"
-#include "llvm/Config/config.h"
+#include "llvm/Config/llvm-config.h"
 
 namespace llvm
 {

@@ -17,7 +17,7 @@
 
 #include "llvm/IR/Function.h"
 
-#include "llvm/Config/config.h"
+#include "llvm/Config/llvm-config.h"
 #if (LLVM_VERSION_MAJOR == 3) && (LLVM_VERSION_MINOR >= 5)
 #include "llvm/IR/ValueMap.h"
 #else

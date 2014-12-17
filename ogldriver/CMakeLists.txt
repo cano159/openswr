@@ -24,7 +24,7 @@ ADD_CUSTOM_COMMAND(
 			glfz.inl glsx.hpp glim.hpp glst.hpp glcl.cpp glcl.hpp gl.inl
 			stubs.cpp dispatch.h dispatch.cpp
 			${DEF}
-	COMMAND python3 ${CMAKE_CURRENT_SOURCE_DIR}/ogl_generate.py --output-dir ${CMAKE_CURRENT_BINARY_DIR}
+	COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/ogl_generate.py --output-dir ${CMAKE_CURRENT_BINARY_DIR}
 	DEPENDS ogl_generate.py
 	COMMENT "Generating OpenGL files..."
 )
@@ -35,7 +35,7 @@ endif()
 
 ADD_CUSTOM_COMMAND(
 	OUTPUT serdeser.hpp
-	COMMAND python3 ${CMAKE_CURRENT_SOURCE_DIR}/ogl_serialize.py --output-dir ${CMAKE_CURRENT_BINARY_DIR} --max-args 17
+	COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/ogl_serialize.py --output-dir ${CMAKE_CURRENT_BINARY_DIR} --max-args 17
 	DEPENDS ogl_serialize.py
 	COMMENT "Generating OpenGL serialization..."
 )
