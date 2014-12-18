@@ -19,12 +19,18 @@ include_directories(.)
 include_directories(./gl)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+if(WIN32)
+	set(PYTHON python)
+else()
+	set(PYTHON python3)
+endif()
+
 ADD_CUSTOM_COMMAND(
 	OUTPUT glcmds.inl executedl.inl generatedl.inl optimizedl.inl glfz.hpp
 			glfz.inl glsx.hpp glim.hpp glst.hpp glcl.cpp glcl.hpp gl.inl
 			stubs.cpp dispatch.h dispatch.cpp
 			${DEF}
-	COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/ogl_generate.py --output-dir ${CMAKE_CURRENT_BINARY_DIR}
+	COMMAND ${PYTHON} ${CMAKE_CURRENT_SOURCE_DIR}/ogl_generate.py --output-dir ${CMAKE_CURRENT_BINARY_DIR}
 	DEPENDS ogl_generate.py
 	COMMENT "Generating OpenGL files..."
 )
@@ -35,7 +41,7 @@ endif()
 
 ADD_CUSTOM_COMMAND(
 	OUTPUT serdeser.hpp
-	COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/ogl_serialize.py --output-dir ${CMAKE_CURRENT_BINARY_DIR} --max-args 17
+	COMMAND ${PYTHON} ${CMAKE_CURRENT_SOURCE_DIR}/ogl_serialize.py --output-dir ${CMAKE_CURRENT_BINARY_DIR} --max-args 17
 	DEPENDS ogl_serialize.py
 	COMMENT "Generating OpenGL serialization..."
 )
