@@ -199,6 +199,11 @@ struct ShG
         EB.setTargetOptions(tOpts);
         EB.setOptLevel(CodeGenOpt::Aggressive);
         EB.setMCPU(sys::getHostCPUName());
+
+#ifdef _WIN32
+		mModule->setTargetTriple(sys::getProcessTriple() + "-elf");
+#endif
+
         mpExec = EB.create();
 
 #if LLVM_USE_INTEL_JITEVENTS
