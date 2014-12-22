@@ -494,12 +494,11 @@ WINGDIAPI BOOL WINAPI DrvDeleteContext(HGLRC hglrc)
 
     OGL::State *pState = context.pState;
 
-    OGL::GetDDProcTable().pfnDestroyContext(OGL::GetDDHandle());
-
-    gContexts.erase(rc);
-
     pState->~State();
     _aligned_free(pState);
+
+    OGL::GetDDProcTable().pfnDestroyContext(OGL::GetDDHandle());
+    gContexts.erase(rc);
 
     OGL::DestroyGlobals();
 
