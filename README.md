@@ -41,7 +41,7 @@ If you encounter problems, please file an issue on github:
 Dependencies
 ------------
 
-* CMake 2.8+
+* CMake 2.8.12+
 * LLVM 3.4+
 * Python 3+
 * libnuma-dev (Linux)
