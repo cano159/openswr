@@ -98,6 +98,11 @@ add_library(${GL} SHARED
 			$<TARGET_OBJECTS:ogldriver>
 			${DEF}
 			)
+install(TARGETS ${GL}
+	ARCHIVE DESTINATION lib
+	LIBRARY DESTINATION lib
+	RUNTIME DESTINATION bin
+)
 
 if(WIN32)
 	set_source_files_properties(${DEF} PROPERTIES GENERATED 1)

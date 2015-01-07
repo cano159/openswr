@@ -85,3 +85,5 @@ add_library(ogldriver OBJECT fragff.cpp glfz.cpp glim.cpp
 	${CMAKE_CURRENT_BINARY_DIR}/glcl.cpp
 	${CMAKE_CURRENT_BINARY_DIR}/stubs.cpp)
 
+install(FILES gl/glext.h gl/gl.h gl/osmesa.h ${PLATFORM_HEADERS}
+	DESTINATION include/GL)
