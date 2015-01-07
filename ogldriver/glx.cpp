@@ -411,7 +411,7 @@ extern "C" {
 void _glXResize(GLuint width, GLuint height);
 
 // @todo generate real FB configs
-GLXFBConfig *glXChooseFBConfig(Display *pDisplay, int screen, int *pAttribList, int *nelements)
+GLXFBConfig *glXChooseFBConfig(Display *pDisplay, int screen, const int *pAttribList, int *nelements)
 {
     MyGLXFBConfig *result = (MyGLXFBConfig *)Xmalloc(sizeof(MyGLXFBConfig));
     memcpy(result, &gFBConfig, sizeof(MyGLXFBConfig));
@@ -796,9 +796,9 @@ void glXDestroyPbuffer(Display *pDisplay, GLXPbuffer pixmap)
     return;
 }
 
-int glXQueryDrawable(Display *pDisplay, GLXDrawable draw, int attribute, unsigned int *value)
+void glXQueryDrawable(Display *pDisplay, GLXDrawable draw, int attribute, unsigned int *value)
 {
-    return Success;
+    return;
 }
 
 GLXDrawable glXGetCurrentReadDrawable()
