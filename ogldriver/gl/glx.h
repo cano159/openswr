@@ -189,6 +189,7 @@ void glXUseXFont(
 	int count,
 	int list);
 
+/* GLX 1.1 and later */
 const char* glXQueryExtensionsString(
 	Display* pDisplay,
 	int screen);
@@ -201,6 +202,105 @@ const char* glXQueryServerString(
 const char* glXGetClientString(
 	Display* pDisplay,
 	int name);
+
+/* GLX 1.2 and later */
+Display* glXGetCurrentDisplay();
+
+/* GLX 1.3 and later */
+GLXFBConfig* glXChooseFBConfig(
+	Display* pDisplay,
+	int screen,
+	const int* pAttribList,
+	int* ielements);
+
+int glXGetFBConfigAttrib(
+	Display* pDisplay,
+	GLXFBConfig config,
+	int attribute,
+	int* value);
+
+GLXFBConfig* glXGetFBConfigs(
+	Display* pDisplay,
+	int screen,
+	int* nelements);
+
+XVisualInfo* glXGetVisualFromFBConfig(
+	Display*dpy,
+	GLXFBConfig config);
+
+GLXWindow glXCreateWindow(
+	Display* pDisplay,
+	GLXFBConfig config,
+	Window win,
+	const int* pAttribList);
+
+void glXDestroyWindow(
+	Display* pDisplay,
+	GLXWindow window);
+
+GLXPixmap glXCreatePixmap(
+	Display* pDisplay,
+	GLXFBConfig config,
+	Pixmap pixmap,
+	const int* pAttribList);
+
+void glXDestroyPixmap(
+	Display* pDisplay,
+	GLXPixmap pixmap);
+
+GLXPbuffer glXCreatePbuffer(
+	Display* pDisplay,
+	GLXFBConfig config,
+	const int* pAttribList);
+
+void glXDestroyPbuffer(
+	Display* pDisplay,
+	GLXPbuffer pbuf);
+
+void glXQueryDrawable(
+	Display* pDisplay,
+	GLXDrawable draw,
+	int attribute,
+	unsigned int* value);
+
+GLXContext glXCreateNewContext(
+	Display* pDisplay,
+	GLXFBConfig config,
+	int renderType,
+	GLXContext shareList,
+	Bool direct);
+
+Bool glXMakeContextCurrent(
+	Display* pDisplay,
+	GLXDrawable draw,
+	GLXDrawable read,
+	GLXContext ctx);
+
+GLXDrawable glXGetCurrentReadDrawable();
+
+int glXQueryContext(
+	Display* pDisplay,
+	GLXContext ctx,
+	int attribute,
+	int* value);
+
+void glXSelectEvent(
+	Display* pDisplay,
+	GLXDrawable drawable,
+	unsigned long mask);
+
+void glXGetSelectedEvent(
+	Display* pDisplay,
+	GLXDrawable drawable,
+        unsigned long* mask);
+
+/* ARB 2. GLX_ARB_get_proc_address */
+void* glXGetProcAddressARB(
+	const GLubyte* procName);
+
+/* ARB 40. GLX_SGI_swap_control */
+int glXSwapIntervalSGI(
+	int interval);
 
 #ifdef __cplusplus
 } // end "C"
