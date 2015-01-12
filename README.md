@@ -42,7 +42,7 @@ Dependencies
 ------------
 
 * CMake 2.8.12+
-* LLVM 3.4+
+* LLVM 3.4+ (RTTI enabled)
 * Python 3+
 * libnuma-dev (Linux)
 * ICC, GCC, or clang (Linux)
