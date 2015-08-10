@@ -1,6 +1,14 @@
 OpenSWR
 =======
 
+Note: This was a very early release of OpenSWR.  We are adding a lot
+of new functionality and working on integrating the source into the
+Mesa project to provide a better experience for our users.  Please
+visit www.openswr.org for more information.
+
+The code provided here is for the curious and does not represent the
+latest OpenSWR progress.
+
 Overview
 --------
 
