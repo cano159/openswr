@@ -1,8 +1,11 @@
 OpenSWR
 =======
 
-Note: This was a very early release of OpenSWR.  We are adding a lot
-of new functionality and working on integrating the source into the
+Note: All development has moved into the Mesa repo.  This source is for reference only.
+--------
+
+This was a very early release of OpenSWR.  We have added a lot
+of new functionality and integrated the source into the
 Mesa project to provide a better experience for our users.  Please
 visit www.openswr.org for more information.
 
